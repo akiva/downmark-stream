@@ -1,5 +1,5 @@
 var fs = require('fs');
-var MarkedStream = require('..');
+var DownmarkStream = require('..');
 var highlight = require('highlight.js');
 var fm = require('front-matter');
 var through = require('through2');
@@ -19,7 +19,7 @@ fs.createReadStream(__dirname + '/fm.md')
     this.push(content);
     callback();
   }))
-  .pipe(MarkedStream(options, { objectMode: true }))
+  .pipe(DownmarkStream(options, { objectMode: true }))
   .pipe(through.obj(function (chunk, enc, callback) {
     this.push(JSON.stringify(chunk, null, 2));
     callback();

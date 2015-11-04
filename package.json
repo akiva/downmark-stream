@@ -1,8 +1,8 @@
 {
-  "name": "marked-stream",
+  "name": "downmark-stream",
   "version": "1.0.0",
   "description": "Transform streaming Markdown to HTML, with `object mode` support for YAML front-matter meta streams",
-  "main": "marked-stream.js",
+  "main": "downmark-stream.js",
   "directories": {
     "example": "example",
     "test": "test"

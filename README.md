@@ -1,16 +1,16 @@
-# marked-stream
+# downmark-stream
 
 [![npm][npm-image]][npm-url]
 [![npm version][npm-version-image]][npm-version-url]
 [![travis][travis-image]][travis-url]
 [![stable][stability-image]][stability-url]
 
-[npm-image]: https://nodei.co/npm/marked-stream.png
-[npm-url]: https://www.npmjs.com/package/marked-stream
-[npm-version-image]: https://badge.fury.io/js/marked-stream.png
-[npm-version-url]: http://badge.fury.io/js/marked-stream
-[travis-image]: https://secure.travis-ci.org/akiva/marked-stream.png
-[travis-url]: https://travis-ci.org/akiva/marked-stream
+[npm-image]: https://nodei.co/npm/downmark-stream.png
+[npm-url]: https://www.npmjs.com/package/downmark-stream
+[npm-version-image]: https://badge.fury.io/js/downmark-stream.png
+[npm-version-url]: http://badge.fury.io/js/downmark-stream
+[travis-image]: https://secure.travis-ci.org/akiva/downmark-stream.png
+[travis-url]: https://travis-ci.org/akiva/downmark-stream
 [stability-image]: http://badges.github.io/stability-badges/dist/stable.svg
 [stability-url]: http://github.com/badges/stability-badges
 
@@ -24,7 +24,7 @@ module.
 ## Installation
 
 ```bash
-npm install marked-stream
+npm install downmark-stream
 ```
 
 ## Usage
@@ -33,10 +33,10 @@ Markdown processed _without_ front-matter:
 
 ```javascript
 var fs = require('fs');
-var MarkedStream = require('marked-stream');
+var DownmarkStream = require('downmark-stream');
 
 fs.createReadStream(__dirname + '/foo.md')
-  .pipe(MarkedStream())
+  .pipe(DownmarkStream())
   .pipe(process.stdout);
 ```
 
@@ -44,7 +44,7 @@ Markdown processed _with_ front-matter:
 
 ```javascript
 var fs = require('fs');
-var MarkedStream = require('marked-stream');
+var DownmarkStream = require('downmark-stream');
 var fm = require('front-matter');
 var through = require('through2');
 
@@ -54,7 +54,7 @@ fs.createReadStream(__dirname + '/foo')
     this.push(content);
     callback();
   }))
-  .pipe(MarkedStream(opts, { objectMode: true }))
+  .pipe(DownmarkStream(opts, { objectMode: true }))
   .pipe(through.obj(function (chunk, enc, callback) {
     this.push(JSON.stringify(chunk, null, 2));
     callback();
@@ -67,7 +67,7 @@ For more examples, view the contents of the `example` directory.
 ## Options
 
 ```javascript
-MarkedStream(markedOptions, streamOptions)
+DownmarkStream(markedOptions, streamOptions)
 ```
 
   - `markedOptions` expected in the same format as those provided to the
