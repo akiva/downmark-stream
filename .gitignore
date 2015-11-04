@@ -1,0 +1,22 @@
+# Swap files
+*~
+*.swp
+
+# Mac OS X is awful
+.DS_Store
+
+# Log files
+logs
+*.log
+
+# Process files
+pids
+*.pid
+*.seed
+
+# Code coverage directories
+lib-cov
+coverage
+
+# Node modules directory (using * to allow for sub-modules)
+node_modules/*

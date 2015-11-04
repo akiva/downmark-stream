@@ -1,0 +1,25 @@
+{
+  "name": "marked-stream",
+  "version": "1.0.0",
+  "description": "Transform streaming Markdown to HTML, with `object mode` support for YAML front-matter meta streams",
+  "main": "marked-stream.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "dependencies": {
+    "marked": "^0.3.5",
+    "readable-stream": "^2.0.4"
+  },
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "front-matter": "^2.0.0",
+    "tape": "^4.2.2",
+    "through2": "^2.0.0"
+  },
+  "scripts": {
+    "test": "node test/test.js | faucet"
+  },
+  "author": "Akiva Levy <akiva@sixthirteen.co>",
+  "license": "MIT"
+}
